@@ -1,0 +1,6 @@
+path: E:\\Python\\AI\\Detect\\YOLO\\datasets\\data
+train: tl_ti/images/train
+val: tl_ti/images/val
+
+nc: 1
+names: ["tl_ti"]

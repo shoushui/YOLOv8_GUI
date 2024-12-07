@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>960</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>960</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1677775</width>
+        <height>1677775</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_train">
+       <attribute name="title">
+        <string>训练</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_35">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_t12" stretch="3,7">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_t2">
+            <item>
+             <widget class="QGroupBox" name="groupbox_train_params">
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+                        border: 2px solid rgb(171, 247, 255);     
+                        border-radius: 5px;          
+                        background-color: rgb(241, 244, 248);
+                        }
+QGroupBox::title {
+                        font-weight: bold;     
+					color: rgb(255, 0, 0);
+                        font-size: 32px;
+                        }</string>
+              </property>
+              <property name="title">
+               <string>参数设置</string>
+              </property>
+              <widget class="QWidget" name="layoutWidget">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>25</y>
+                 <width>251</width>
+                 <height>491</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_t1">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t1" stretch="1,1,1">
+                  <item>
+                   <widget class="QLabel" name="label_model_yaml">
+                    <property name="text">
+                     <string>模型配置文件</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="line_model_yaml_info"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="button_model_yaml">
+                    <property name="text">
+                     <string>select</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t2" stretch="1,1,1">
+                  <item>
+                   <widget class="QLabel" name="label_data_yaml">
+                    <property name="text">
+                     <string>数据配置文件</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="line_data_yaml_info"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="button_data_yaml">
+                    <property name="text">
+                     <string>select</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t3" stretch="1,1,1">
+                  <item>
+                   <widget class="QLabel" name="label_pretrain_model">
+                    <property name="text">
+                     <string>预训练模型</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="line_pretrain_model_info"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="button_pretrain_model">
+                    <property name="text">
+                     <string>select</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t4" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_train_epoches">
+                    <property name="text">
+                     <string>训练轮次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinbox_train_epoches">
+                    <property name="minimum">
+                     <number>50</number>
+                    </property>
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="singleStep">
+                     <number>10</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t5" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_train_workers">
+                    <property name="text">
+                     <string>工作线程数量</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinbox_train_workers">
+                    <property name="maximum">
+                     <number>10000</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t6" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_train_batch_size">
+                    <property name="text">
+                     <string>训练批次大小</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinbox_batch_size">
+                    <property name="minimum">
+                     <number>1</number>
+                    </property>
+                    <property name="maximum">
+                     <number>10000</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t7" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_train_imgsz">
+                    <property name="text">
+                     <string>训练图像大小</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinbox_train_imgsz">
+                    <property name="minimum">
+                     <number>64</number>
+                    </property>
+                    <property name="maximum">
+                     <number>10240</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t8" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_train_earlystop">
+                    <property name="text">
+                     <string>早停轮数</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spibox_train_earlystop">
+                    <property name="minimum">
+                     <number>150</number>
+                    </property>
+                    <property name="maximum">
+                     <number>1000</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t9" stretch="1,0">
+                  <item>
+                   <widget class="QLabel" name="label_train_optimier">
+                    <property name="text">
+                     <string>选择优化器类型</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="OptimierCheckbox">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,1">
+                     <item>
+                      <widget class="QCheckBox" name="checkbox_train_sgd">
+                       <property name="text">
+                        <string>SGD</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                       <property name="autoExclusive">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkbox_train_adam">
+                       <property name="text">
+                        <string>Adam</string>
+                       </property>
+                       <property name="autoExclusive">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_t10">
+                  <item>
+                   <widget class="QLabel" name="label_device">
+                    <property name="text">
+                     <string>选择代码运行的设备</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="DeviceCheckBox">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <item>
+                      <widget class="QCheckBox" name="checkbox_gpu">
+                       <property name="text">
+                        <string>GPU</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                       <property name="autoExclusive">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkbox_cpu">
+                       <property name="text">
+                        <string>CPU</string>
+                       </property>
+                       <property name="autoExclusive">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_train_checkparams">
+              <property name="text">
+               <string>参数检查</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="buttom_train_begin">
+              <property name="text">
+               <string>开始训练</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_t3" stretch="3,2">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_t11" stretch="1,1">
+              <item>
+               <widget class="QLabel" name="label_train_loss">
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+                        border-radius: 5px;          
+                        background-color: rgb(242, 255, 253);
+                        }</string>
+                </property>
+                <property name="text">
+                 <string>ShowLossImage</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_train_accuracy">
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+                        border-radius: 5px;          
+                        background-color: rgb(242, 255, 253);
+                        }</string>
+                </property>
+                <property name="text">
+                 <string>ShowAccurayImage</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="line_train_logs">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_export">
+       <attribute name="title">
+        <string>导出</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_e3" stretch="4,1,8">
+          <item>
+           <widget class="QGroupBox" name="groupbox_export_params">
+            <property name="styleSheet">
+             <string notr="true">QGroupBox {
+                        border: 2px solid rgb(171, 247, 255);     
+                        border-radius: 5px;          
+                        background-color: rgb(241, 244, 248);
+                        }
+QGroupBox::title {
+                        font-weight: bold;      
+					color:rgb(255, 0, 0);
+					font-size: 24px;
+                        }</string>
+            </property>
+            <property name="title">
+             <string>参数设置</string>
+            </property>
+            <widget class="QWidget" name="layoutWidget">
+             <property name="geometry">
+              <rect>
+               <x>3</x>
+               <y>11</y>
+               <width>911</width>
+               <height>151</height>
+              </rect>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1">
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_e1" stretch="1,1">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_e1" stretch="1,1,1">
+                  <item>
+                   <widget class="QLabel" name="label_trained_model">
+                    <property name="text">
+                     <string>待导出模型文件</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="line_trained_model_info"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="button_trained_model">
+                    <property name="text">
+                     <string>select</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_e2" stretch="1,1,1">
+                  <item>
+                   <widget class="QLabel" name="label_export_model_yaml">
+                    <property name="text">
+                     <string>模型配置文件</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="line_export_model_yaml_info"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="button_export_model_yaml">
+                    <property name="text">
+                     <string>select</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_e2" stretch="1,1">
+                <property name="leftMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>5</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_e3" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_export_onnx_opset">
+                    <property name="text">
+                     <string>导出onnx级别</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_export_onnx_opset">
+                    <property name="currentText">
+                     <string>10</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>10</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>11</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>12</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>13</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>14</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>15</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>16</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>17</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_e4" stretch="1,1">
+                  <item>
+                   <widget class="QLabel" name="label_export_onnx_inputsize">
+                    <property name="text">
+                     <string>导出输入大小</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinbox_export_onnx_inputsize">
+                    <property name="maximum">
+                     <number>10240</number>
+                    </property>
+                    <property name="value">
+                     <number>640</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_e5">
+            <item>
+             <widget class="QPushButton" name="button_export_checkparams">
+              <property name="text">
+               <string>参数检查</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_export_begin">
+              <property name="text">
+               <string>开始导出</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="line_export_logs">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionTrain">
+   <property name="text">
+    <string>训练</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>导出</string>
+   </property>
+  </action>
+  <action name="actionInference">
+   <property name="text">
+    <string>推理</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>button_model_yaml</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
