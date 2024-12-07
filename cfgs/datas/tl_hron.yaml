@@ -1,6 +1,0 @@
-path: E:\\Python\\AI\\Detect\\YOLO\\datasets\\data
-train: tl_horn_obb_15/images/train
-val: tl_horn_obb_15/images/val
-
-nc: 1
-names: ["tl_hron"]
